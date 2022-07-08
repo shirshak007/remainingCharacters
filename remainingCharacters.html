@@ -1,0 +1,16 @@
+
+<label for="text">Text</label>
+<textarea name="text" rows="10" cols="50" style="width:100%" id="message" oninput="textCounter(this,'counter',150);"></textarea>
+<span>Remaining <span id="counter">150</span></span>
+
+<script>
+function textCounter(field,field2,maxlimit) {
+	var countfield = document.getElementById(field2);
+	if ( field.value.length > maxlimit ) {
+  		field.value = field.value.substring( 0, maxlimit );
+  		return false;
+ 	} else {
+  		countfield.innerHTML = maxlimit - field.value.length;
+ 	}
+}
+</script>
